@@ -1,0 +1,41 @@
+#!/bin/bash
+
+build() {
+	javac -d out $(find src -name "*.java")
+}
+
+run() {
+	build || { echo "🚨 Build failed!!"; exit 1; }
+	java -cp out Main
+}
+
+test() {
+	build || { echo "🚨 Build failed!!"; exit 1; }
+	javac -cp "out:lib/*" -d out-test $(find test -name "*.java")
+	java -jar lib/junit-platform-console-standalone-1.10.0.jar execute -cp "out:out-test" --scan-class-path
+}
+
+if [[ $1 == "build" ]]; then
+	build || { echo "🚨 Build failed!!"; exit 1; }
+	echo "📦 Build complete!!"
+elif [[ $1 == "run" ]]; then
+	echo -e "========= STARTED =========\n"
+	run || { echo -e "\n🚨 Run failed!!"; exit 1; }
+	echo -e "\n======== FINISHED ========="
+elif [[ $1 == "test" ]]; then
+	echo -e "========= STARTED =========\n"
+	test || { echo -e "\n🚨 Test failed!!"; exit 1; }
+	echo -e "\n======== FINISHED ========="
+elif [[ $1 == "clean" ]]; then
+	if [ ! -d ./out ] && [ ! -d ./out-test ]; then
+		echo "👍 Nothing to crush!!"
+		exit 0
+	fi
+
+	rm -rf out
+	rm -rf out-test
+	echo "✅ Crushed bytes!!"
+else
+	echo "⚠️  Allowed commands: mac [build | run | test | clean]"
+	exit 1
+fi

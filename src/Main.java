@@ -41,6 +41,17 @@ public class Main {
         System.out.println("Run `mac test` to run unittest");
     }
 
+    public static boolean more14(int[] nums) {
+        int count = 0;
+
+        for (int n : nums) {
+            if (n == 1) count++;
+            if (n == 4) count--;
+        }
+
+        return count > 0;
+    }
+
     public static boolean lucky13(int[] nums) {
         for (int i = 0; i < nums.length; i++)
             if (nums[i] == 1 || nums[i] == 3)

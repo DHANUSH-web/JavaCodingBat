@@ -223,4 +223,11 @@ public class MainTest {
         assertFalse(Main.sum28(new int[]{2, 3, 2, 2, 4, 2, 2}));
         assertFalse(Main.sum28(new int[]{1, 2, 3, 4}));
     }
+
+    @Test
+    void testMore14() {
+        assertTrue(Main.more14(new int[]{1, 4, 1}));
+        assertFalse(Main.more14(new int[]{1, 4, 1, 4}));
+        assertTrue(Main.more14(new int[]{1, 1}));
+    }
 }

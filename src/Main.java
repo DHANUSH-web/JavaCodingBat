@@ -41,6 +41,15 @@ public class Main {
         System.out.println("Run `mac test` to run unittest");
     }
 
+    public static int[] fizzArray(int n) {
+        int[] arr = new int[n];
+
+        for (int i = 0; i < n; i++)
+            arr[i] = i;
+
+        return arr;
+    }
+
     public static boolean more14(int[] nums) {
         int count = 0;
 

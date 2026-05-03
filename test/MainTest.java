@@ -244,4 +244,11 @@ public class MainTest {
         assertFalse(Main.only14(new int[]{1, 4, 2, 4}));
         assertTrue(Main.only14(new int[]{1, 1}));
     }
+    
+    @Test
+    void testFizzArray2() {
+        assertArrayEquals(Main.fizzArray2(4), new String[]{"0", "1", "2", "3"});
+        assertArrayEquals(Main.fizzArray2(1), new String[]{"0"});
+        assertArrayEquals(Main.fizzArray2(10), new String[]{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"});
+    }
 }

@@ -41,6 +41,19 @@ public class Main {
         System.out.println("Run `mac test` to run unittest");
     }
 
+    public static boolean no14(int[] nums) {
+        boolean has1 = false;
+        boolean has4 = false;
+
+        for (int n : nums) {
+            if (n == 1) has1 = true;
+            if (n == 4) has4 = true;
+            if (has1 && has4) return false;
+        }
+
+        return !(has1 && has4);
+    }
+
     public static String[] fizzArray2(int n) {
         String[] arr = new String[n];
 

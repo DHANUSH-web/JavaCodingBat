@@ -251,4 +251,11 @@ public class MainTest {
         assertArrayEquals(Main.fizzArray2(1), new String[]{"0"});
         assertArrayEquals(Main.fizzArray2(10), new String[]{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"});
     }
+
+    @Test
+    void testNo14() {
+        assertTrue(Main.no14(new int[]{1, 2, 3}));
+        assertFalse(Main.no14(new int[]{1, 2, 3, 4}));
+        assertTrue(Main.no14(new int[]{2, 3, 4}));
+    }
 }

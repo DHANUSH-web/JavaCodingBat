@@ -258,4 +258,11 @@ public class MainTest {
         assertFalse(Main.no14(new int[]{1, 2, 3, 4}));
         assertTrue(Main.no14(new int[]{2, 3, 4}));
     }
+    
+    @Test
+    void testIsEverywhere() {
+        assertTrue(Main.isEverywhere(new int[]{1, 2, 1, 3}, 1));
+        assertFalse(Main.isEverywhere(new int[]{1, 2, 1, 3}, 2));
+        assertFalse(Main.isEverywhere(new int[]{1, 2, 1, 3, 4}, 1));
+    }
 }

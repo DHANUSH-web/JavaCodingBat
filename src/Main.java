@@ -41,6 +41,15 @@ public class Main {
         System.out.println("Run `mac test` to run unittest");
     }
 
+    public static boolean isEverywhere(int[] nums, int val)
+    {
+        for (int i = 0; i < nums.length - 1; i++)
+            if (nums[i] != val && nums[i+1] != val)
+                return false;
+
+        return true;
+    }
+
     public static boolean no14(int[] nums) {
         boolean has1 = false;
         boolean has4 = false;

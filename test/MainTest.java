@@ -272,4 +272,11 @@ public class MainTest {
       assertTrue(Main.either24(new int[]{4, 4, 1}));
       assertFalse(Main.either24(new int[]{4, 4, 1, 2, 2}));
     }
+
+    @Test
+    void testMatchUp() {
+        assertEquals(Main.matchUp(new int[]{1, 2, 3}, new int[]{2, 3, 10}), 2);
+        assertEquals(Main.matchUp(new int[]{1, 2, 3}, new int[]{2, 3, 5}), 3);
+        assertEquals(Main.matchUp(new int[]{1, 2, 3}, new int[]{2, 3, 3}), 2);
+    }
 }

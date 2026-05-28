@@ -223,4 +223,53 @@ public class MainTest {
         assertFalse(Main.sum28(new int[]{2, 3, 2, 2, 4, 2, 2}));
         assertFalse(Main.sum28(new int[]{1, 2, 3, 4}));
     }
+
+    @Test
+    void testMore14() {
+        assertTrue(Main.more14(new int[]{1, 4, 1}));
+        assertFalse(Main.more14(new int[]{1, 4, 1, 4}));
+        assertTrue(Main.more14(new int[]{1, 1}));
+    }
+
+    @Test
+    void testFizzArray() {
+        assertArrayEquals(Main.fizzArray(4), new int[]{0, 1, 2, 3});
+        assertArrayEquals(Main.fizzArray(1), new int[]{0});
+        assertArrayEquals(Main.fizzArray(10), new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9});
+    }
+    
+    @Test
+    void testOnly14() {
+        assertTrue(Main.only14(new int[]{1, 4, 1, 4}));
+        assertFalse(Main.only14(new int[]{1, 4, 2, 4}));
+        assertTrue(Main.only14(new int[]{1, 1}));
+    }
+    
+    @Test
+    void testFizzArray2() {
+        assertArrayEquals(Main.fizzArray2(4), new String[]{"0", "1", "2", "3"});
+        assertArrayEquals(Main.fizzArray2(1), new String[]{"0"});
+        assertArrayEquals(Main.fizzArray2(10), new String[]{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"});
+    }
+
+    @Test
+    void testNo14() {
+        assertTrue(Main.no14(new int[]{1, 2, 3}));
+        assertFalse(Main.no14(new int[]{1, 2, 3, 4}));
+        assertTrue(Main.no14(new int[]{2, 3, 4}));
+    }
+    
+    @Test
+    void testIsEverywhere() {
+        assertTrue(Main.isEverywhere(new int[]{1, 2, 1, 3}, 1));
+        assertFalse(Main.isEverywhere(new int[]{1, 2, 1, 3}, 2));
+        assertFalse(Main.isEverywhere(new int[]{1, 2, 1, 3, 4}, 1));
+    }
+
+    @Test
+    void testEither24() {
+      assertTrue(Main.either24(new int[]{1, 2, 2}));
+      assertTrue(Main.either24(new int[]{4, 4, 1}));
+      assertFalse(Main.either24(new int[]{4, 4, 1, 2, 2}));
+    }
 }

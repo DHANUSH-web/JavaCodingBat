@@ -41,6 +41,78 @@ public class Main {
         System.out.println("Run `mac test` to run unittest");
     }
 
+    public static boolean either24(int[] nums) {
+      boolean is2 = false;
+      boolean is4 = false;
+
+      for (int i = 0; i < nums.length-1; i++) {
+        if (is2 && is4) return false;
+        if (nums[i] == 2 && nums[i+1] == 2) is2 = true;
+        if (nums[i] == 4 && nums[i+1] == 4) is4 = true;
+      }
+
+      return is2 != is4;
+    }
+
+    public static boolean isEverywhere(int[] nums, int val)
+    {
+        for (int i = 0; i < nums.length - 1; i++)
+            if (nums[i] != val && nums[i+1] != val)
+                return false;
+
+        return true;
+    }
+
+    public static boolean no14(int[] nums) {
+        boolean has1 = false;
+        boolean has4 = false;
+
+        for (int n : nums) {
+            if (n == 1) has1 = true;
+            if (n == 4) has4 = true;
+            if (has1 && has4) return false;
+        }
+
+        return !(has1 && has4);
+    }
+
+    public static String[] fizzArray2(int n) {
+        String[] arr = new String[n];
+
+        for (int i = 0; i < n; i++)
+            arr[i] = String.valueOf(i);
+
+        return arr;
+    }
+
+    public static boolean only14(int[] nums) {
+        for (int n : nums)
+            if (n != 1 && n != 4)
+                return false;
+
+        return true;
+    }
+
+    public static int[] fizzArray(int n) {
+        int[] arr = new int[n];
+
+        for (int i = 0; i < n; i++)
+            arr[i] = i;
+
+        return arr;
+    }
+
+    public static boolean more14(int[] nums) {
+        int count = 0;
+
+        for (int n : nums) {
+            if (n == 1) count++;
+            if (n == 4) count--;
+        }
+
+        return count > 0;
+    }
+
     public static boolean lucky13(int[] nums) {
         for (int i = 0; i < nums.length; i++)
             if (nums[i] == 1 || nums[i] == 3)

@@ -265,4 +265,11 @@ public class MainTest {
         assertFalse(Main.isEverywhere(new int[]{1, 2, 1, 3}, 2));
         assertFalse(Main.isEverywhere(new int[]{1, 2, 1, 3, 4}, 1));
     }
+
+    @Test
+    void testEither24() {
+      assertTrue(Main.either24(new int[]{1, 2, 2}));
+      assertTrue(Main.either24(new int[]{4, 4, 1}));
+      assertFalse(Main.either24(new int[]{4, 4, 1, 2, 2}));
+    }
 }

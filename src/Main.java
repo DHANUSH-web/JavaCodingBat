@@ -41,6 +41,17 @@ public class Main {
         System.out.println("Run `mac test` to run unittest");
     }
 
+    public static boolean has12(int[] nums) {
+        boolean found = false;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 1 && !found) found = true;
+            if (nums[i] == 2 && found) return true;
+        }
+
+        return false;
+    }
+
     public static boolean has77(int[] nums) {
       for (int i = 0; i < nums.length-2; i++)
         if ((nums[i] == 7 && (nums[i+1] == 7 || nums[i+2] == 7)) || (nums[i+1] == 7 && nums[i+2] == 7))

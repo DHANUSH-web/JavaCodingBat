@@ -286,4 +286,12 @@ public class MainTest {
       assertTrue(Main.has77(new int[]{1, 7, 1, 7}));
       assertFalse(Main.has77(new int[]{1, 7, 1, 1, 7}));
     }
+
+    @Test
+    void testHas12() {
+      assertTrue(Main.has12(new int[]{1, 3, 2}));
+      assertTrue(Main.has12(new int[]{1, 3, 1, 2}));
+      assertTrue(Main.has12(new int[]{1, 3, 1, 2, 5}));
+      assertFalse(Main.has12(new int[]{1}));
+    }
 }

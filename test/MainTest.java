@@ -209,14 +209,14 @@ public class MainTest {
         assertFalse(Main.has22(new int[]{1, 2, 1, 2}));
         assertFalse(Main.has22(new int[]{1, 1, 2}));
     }
-    
+
     @Test
     void testLucky13() {
         assertTrue(Main.lucky13(new int[]{0, 2, 4}));
         assertFalse(Main.lucky13(new int[]{1, 2, 3}));
         assertFalse(Main.lucky13(new int[]{1, 1, 4}));
     }
-    
+
     @Test
     void testSum28() {
         assertTrue(Main.sum28(new int[]{2, 3, 2, 2, 4, 2}));
@@ -237,14 +237,14 @@ public class MainTest {
         assertArrayEquals(Main.fizzArray(1), new int[]{0});
         assertArrayEquals(Main.fizzArray(10), new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9});
     }
-    
+
     @Test
     void testOnly14() {
         assertTrue(Main.only14(new int[]{1, 4, 1, 4}));
         assertFalse(Main.only14(new int[]{1, 4, 2, 4}));
         assertTrue(Main.only14(new int[]{1, 1}));
     }
-    
+
     @Test
     void testFizzArray2() {
         assertArrayEquals(Main.fizzArray2(4), new String[]{"0", "1", "2", "3"});
@@ -258,7 +258,7 @@ public class MainTest {
         assertFalse(Main.no14(new int[]{1, 2, 3, 4}));
         assertTrue(Main.no14(new int[]{2, 3, 4}));
     }
-    
+
     @Test
     void testIsEverywhere() {
         assertTrue(Main.isEverywhere(new int[]{1, 2, 1, 3}, 1));
@@ -271,5 +271,27 @@ public class MainTest {
       assertTrue(Main.either24(new int[]{1, 2, 2}));
       assertTrue(Main.either24(new int[]{4, 4, 1}));
       assertFalse(Main.either24(new int[]{4, 4, 1, 2, 2}));
+    }
+
+    @Test
+    void testMatchUp() {
+        assertEquals(Main.matchUp(new int[]{1, 2, 3}, new int[]{2, 3, 10}), 2);
+        assertEquals(Main.matchUp(new int[]{1, 2, 3}, new int[]{2, 3, 5}), 3);
+        assertEquals(Main.matchUp(new int[]{1, 2, 3}, new int[]{2, 3, 3}), 2);
+    }
+
+    @Test
+    void testHas77() {
+      assertTrue(Main.has77(new int[]{1, 7, 7}));
+      assertTrue(Main.has77(new int[]{1, 7, 1, 7}));
+      assertFalse(Main.has77(new int[]{1, 7, 1, 1, 7}));
+    }
+
+    @Test
+    void testHas12() {
+      assertTrue(Main.has12(new int[]{1, 3, 2}));
+      assertTrue(Main.has12(new int[]{1, 3, 1, 2}));
+      assertTrue(Main.has12(new int[]{1, 3, 1, 2, 5}));
+      assertFalse(Main.has12(new int[]{1}));
     }
 }

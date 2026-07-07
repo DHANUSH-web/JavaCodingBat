@@ -28,17 +28,45 @@ public class Main {
 
     public static void main(String[] args) {
         // System.out.println("Black Hole Simulation");
-        
+
         // String BH = "Sagittarius A*";
         // final double massKg = massFromOrbit(1e9, 2e7);
         // final double solarMasses = toSolarMass(massKg);
         // final double sr = getSchwarzschildRadius(massKg);
-        
+
         // System.out.printf("Black Hole: %s\n", BH);
         // System.out.printf("Mass of Black Hole: %f KG\n", massKg);
         // System.out.printf("Mass of Black Hole: %f SM\n", solarMasses);
         // System.out.printf("Schwarzschild Radius: %f M\n", sr);
         System.out.println("Run `mac test` to run unittest");
+    }
+
+    public static boolean has12(int[] nums) {
+        boolean found = false;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 1 && !found) found = true;
+            if (nums[i] == 2 && found) return true;
+        }
+
+        return false;
+    }
+
+    public static boolean has77(int[] nums) {
+      for (int i = 0; i < nums.length-2; i++)
+        if ((nums[i] == 7 && (nums[i+1] == 7 || nums[i+2] == 7)) || (nums[i+1] == 7 && nums[i+2] == 7))
+          return true;
+      return false;
+    }
+
+    public static int matchUp(int[] nums1, int[] nums2) {
+        int count = 0;
+
+        for (int i = 0; i < nums1.length; i++)
+            if (nums1[i] != nums2[i] && Math.abs(nums1[i] - nums2[i]) <= 2)
+                count++;
+
+        return count;
     }
 
     public static boolean either24(int[] nums) {
@@ -125,7 +153,7 @@ public class Main {
 
         for (int i = 0; i < nums.length; i++)
             if (nums[i] == 2) sum += nums[i];
-        
+
         return sum == 8;
     }
 
@@ -248,7 +276,7 @@ public class Main {
         System.out.println(System.getProperty("java.library.path"));
 
         OperatingSystemMXBean os = ManagementFactory.getOperatingSystemMXBean();
-        
+
         System.out.println(os.getAvailableProcessors());
         System.out.println(os.getSystemLoadAverage());
 

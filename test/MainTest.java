@@ -294,4 +294,11 @@ public class MainTest {
       assertTrue(Main.has12(new int[]{1, 3, 1, 2, 5}));
       assertFalse(Main.has12(new int[]{1}));
     }
+
+    @Test
+    void testModThree() {
+        assertTrue(Main.modThree(new int[]{2, 1, 3, 5}));
+        assertFalse(Main.modThree(new int[]{2, 1, 2, 5}));
+        assertTrue(Main.modThree(new int[]{2, 4, 2, 5}));
+    }
 }

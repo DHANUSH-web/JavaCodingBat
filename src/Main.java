@@ -41,6 +41,23 @@ public class Main {
         System.out.println("Run `mac test` to run unittest");
     }
 
+    public static boolean haveThree(int[] nums) {
+        int count = 0;
+
+        for (int i = 0; i < nums.length-1; i++) {
+            if (nums[i] == 3 && nums[i+1] != 3)
+                count++;
+
+            if (nums[i] == 3 && nums[i+1] == 3)
+                return false;
+        }
+
+        if (nums.length > 2 && nums[nums.length-1] == 3 && nums[nums.length-2] != 3)
+            count++;
+
+        return count == 3;
+    }
+
     public static boolean modThree(int[] nums) {
         for (int i = 0; i < nums.length-2; i++)
         {

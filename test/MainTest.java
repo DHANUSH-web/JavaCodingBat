@@ -308,4 +308,11 @@ public class MainTest {
         assertFalse(Main.haveThree(new int[]{3, 1, 3, 3}));
         assertFalse(Main.haveThree(new int[]{3, 4, 3, 3, 4}));
     }
+
+    @Test
+    void testTwoTwo() {
+        assertTrue(Main.twoTwo(new int[]{4, 2, 2, 3}));
+        assertTrue(Main.twoTwo(new int[]{2, 2, 4}));
+        assertFalse(Main.twoTwo(new int[]{2, 2, 4, 2}));
+    }
 }

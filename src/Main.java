@@ -41,6 +41,15 @@ public class Main {
         System.out.println("Run `mac test` to run unittest");
     }
 
+    public static boolean sameEnds(int[] nums, int len) {
+        if (nums.length < len) return false;
+
+        for (int i = 0; i < len; i++)
+            if (nums[i] != nums[(nums.length - len) + i])
+                return false;
+        return true;
+    }
+
     public static boolean twoTwo(int[] nums) {
         if (nums.length == 1) return nums[0] != 2;
         if (nums.length == 2) return (nums[0] == 2 && nums[1] == 2) || (nums[0] != 2 && nums[1] != 2);

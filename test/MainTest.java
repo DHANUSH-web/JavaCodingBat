@@ -315,4 +315,11 @@ public class MainTest {
         assertTrue(Main.twoTwo(new int[]{2, 2, 4}));
         assertFalse(Main.twoTwo(new int[]{2, 2, 4, 2}));
     }
+
+    @Test
+    void testSameEnds() {
+        assertFalse(Main.sameEnds(new int[]{5, 6, 45, 99, 13, 5, 6}, 1));
+        assertTrue(Main.sameEnds(new int[]{5, 6, 45, 99, 13, 5, 6}, 2));
+        assertFalse(Main.sameEnds(new int[]{5, 6, 45, 99, 13, 5, 6}, 3));
+    }
 }

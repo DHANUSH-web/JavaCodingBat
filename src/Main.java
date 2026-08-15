@@ -41,6 +41,13 @@ public class Main {
         System.out.println("Run `mac test` to run unittest");
     }
 
+    public static boolean tripleUp(int[] nums) {
+        for (int i = 0; i < nums.length-2; i++)
+            if (nums[i+1] - nums[i] == 1 && nums[i+2] - nums[i+1] == 1)
+                return true;
+        return false;
+    }
+
     public static boolean sameEnds(int[] nums, int len) {
         if (nums.length < len) return false;
 

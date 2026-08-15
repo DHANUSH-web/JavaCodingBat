@@ -322,4 +322,11 @@ public class MainTest {
         assertTrue(Main.sameEnds(new int[]{5, 6, 45, 99, 13, 5, 6}, 2));
         assertFalse(Main.sameEnds(new int[]{5, 6, 45, 99, 13, 5, 6}, 3));
     }
+
+    @Test
+    void testTripleUp() {
+        assertTrue(Main.tripleUp(new int[]{2, 1, 4, 5, 6, 2, 1}));
+        assertTrue(Main.tripleUp(new int[]{1, 2, 3}));
+        assertFalse(Main.tripleUp(new int[]{1, 2, 4}));
+    }
 }

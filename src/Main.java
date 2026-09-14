@@ -41,6 +41,84 @@ public class Main {
         System.out.println("Run `mac test` to run unittest");
     }
 
+    public static boolean tripleUp(int[] nums) {
+        for (int i = 0; i < nums.length-2; i++)
+            if (nums[i+1] - nums[i] == 1 && nums[i+2] - nums[i+1] == 1)
+                return true;
+        return false;
+    }
+
+    public static boolean sameEnds(int[] nums, int len) {
+        if (nums.length < len) return false;
+
+        for (int i = 0; i < len; i++)
+            if (nums[i] != nums[(nums.length - len) + i])
+                return false;
+        return true;
+    }
+
+    public static boolean twoTwo(int[] nums) {
+        if (nums.length == 1) return nums[0] != 2;
+        if (nums.length == 2) return (nums[0] == 2 && nums[1] == 2) || (nums[0] != 2 && nums[1] != 2);
+        if (nums.length < 2) return true;
+
+        boolean couple = false, only, both;
+        int count = 0;
+
+        for (int i = 0; i < nums.length-1; i++) {
+            only = (nums[i] == 2 && nums[i+1] != 2) || (nums[i] != 2 && nums[i+1] == 2);
+            both = nums[i] == 2 && nums[i+1] == 2;
+
+            if (only) {
+                count++;
+                couple = false;
+            }
+
+            if (both) {
+                couple = true;
+                i++;
+            }
+        }
+
+        return couple || count == 0;
+    }
+
+    public static boolean haveThree(int[] nums) {
+        int count = 0;
+
+        for (int i = 0; i < nums.length-1; i++) {
+            if (nums[i] == 3 && nums[i+1] != 3)
+                count++;
+
+            if (nums[i] == 3 && nums[i+1] == 3)
+                return false;
+        }
+
+        if (nums.length > 2 && nums[nums.length-1] == 3 && nums[nums.length-2] != 3)
+            count++;
+
+        return count == 3;
+    }
+
+    public static boolean modThree(int[] nums) {
+        for (int i = 0; i < nums.length-2; i++)
+        {
+            if ((
+                nums[i]   % 2 == 0 &&
+                nums[i+1] % 2 == 0 &&
+                nums[i+2] % 2 == 0
+            ) ||
+            (
+                nums[i]   % 2 == 1  &&
+                nums[i+1] % 2 == 1  &&
+                nums[i+2] % 2 == 1
+            ))
+                return true;
+        }
+
+        return false;
+    }
+
     public static boolean has12(int[] nums) {
         boolean found = false;
 

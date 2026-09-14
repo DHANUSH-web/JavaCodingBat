@@ -294,4 +294,39 @@ public class MainTest {
       assertTrue(Main.has12(new int[]{1, 3, 1, 2, 5}));
       assertFalse(Main.has12(new int[]{1}));
     }
+
+    @Test
+    void testModThree() {
+        assertTrue(Main.modThree(new int[]{2, 1, 3, 5}));
+        assertFalse(Main.modThree(new int[]{2, 1, 2, 5}));
+        assertTrue(Main.modThree(new int[]{2, 4, 2, 5}));
+    }
+
+    @Test
+    void testHaveThree() {
+        assertTrue(Main.haveThree(new int[]{3, 1, 3, 1, 3}));
+        assertFalse(Main.haveThree(new int[]{3, 1, 3, 3}));
+        assertFalse(Main.haveThree(new int[]{3, 4, 3, 3, 4}));
+    }
+
+    @Test
+    void testTwoTwo() {
+        assertTrue(Main.twoTwo(new int[]{4, 2, 2, 3}));
+        assertTrue(Main.twoTwo(new int[]{2, 2, 4}));
+        assertFalse(Main.twoTwo(new int[]{2, 2, 4, 2}));
+    }
+
+    @Test
+    void testSameEnds() {
+        assertFalse(Main.sameEnds(new int[]{5, 6, 45, 99, 13, 5, 6}, 1));
+        assertTrue(Main.sameEnds(new int[]{5, 6, 45, 99, 13, 5, 6}, 2));
+        assertFalse(Main.sameEnds(new int[]{5, 6, 45, 99, 13, 5, 6}, 3));
+    }
+
+    @Test
+    void testTripleUp() {
+        assertTrue(Main.tripleUp(new int[]{2, 1, 4, 5, 6, 2, 1}));
+        assertTrue(Main.tripleUp(new int[]{1, 2, 3}));
+        assertFalse(Main.tripleUp(new int[]{1, 2, 4}));
+    }
 }

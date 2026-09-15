@@ -329,4 +329,27 @@ public class MainTest {
         assertTrue(Main.tripleUp(new int[]{1, 2, 3}));
         assertFalse(Main.tripleUp(new int[]{1, 2, 4}));
     }
+
+    @Test
+    void testFizzArray3() {
+        // expected arrays
+        int[] TEST_ARR1 = {5, 6, 7, 8, 9};
+        int[] TEST_ARR2 = {11, 12, 13, 14, 15, 16, 17};
+        int[] TEST_ARR3 = {1, 2};
+
+        // actual arrays
+        int[] TEST1 = Main.fizzArray3(5, 10);
+        int[] TEST2 = Main.fizzArray3(11, 18);
+        int[] TEST3 = Main.fizzArray3(1, 3);
+
+        // Test sizes
+        assertEquals(TEST_ARR1.length, TEST1.length);
+        assertEquals(TEST_ARR2.length, TEST2.length);
+        assertEquals(TEST_ARR3.length, TEST3.length);
+
+        // Test cases
+        assertArrayEquals(TEST_ARR1, TEST1);
+        assertArrayEquals(TEST_ARR2, TEST2);
+        assertArrayEquals(TEST_ARR3, TEST3);
+    }
 }

@@ -41,6 +41,15 @@ public class Main {
         System.out.println("Run `mac test` to run unittest");
     }
 
+    public static int[] fizzArray3(int start, int end) {
+        int[] arr = new int[end - start];
+
+        for (int i = start; i < end; i++)
+            arr[i - start] = i;
+
+        return arr;
+    }
+
     public static boolean tripleUp(int[] nums) {
         for (int i = 0; i < nums.length-2; i++)
             if (nums[i+1] - nums[i] == 1 && nums[i+2] - nums[i+1] == 1)

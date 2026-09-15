@@ -13,7 +13,7 @@ TEST_OUT_DIR := out-test
 build:
 	@mkdir -p $(OUT_DIR)
 	@$(JAVAC) -d $(OUT_DIR) $(MAIN_SOURCES)
-	@echo "Build complete."
+	@echo "📦 Build complete!!"
 
 run: build
 	@echo "========= STARTED ========="
@@ -29,4 +29,4 @@ test: build
 
 clean:
 	@rm -rf $(OUT_DIR) $(TEST_OUT_DIR)
-	@echo "Build outputs removed."
+	@echo "✅ Crushed bytes!!"

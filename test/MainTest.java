@@ -352,4 +352,11 @@ public class MainTest {
         assertArrayEquals(TEST_ARR2, TEST2);
         assertArrayEquals(TEST_ARR3, TEST3);
     }
+
+    @Test
+    void testShiftLeft() {
+        assertArrayEquals(Main.shiftLeft(new int[]{5, 1, 2, 3, 4}), new int[]{1, 2, 3, 4, 5});
+        assertArrayEquals(Main.shiftLeft(new int[]{1, 2}), new int[]{2, 1});
+        assertArrayEquals(Main.shiftLeft(new int[]{1}), new int[]{1});
+    }
 }

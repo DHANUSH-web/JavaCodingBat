@@ -41,6 +41,26 @@ public class Main {
         System.out.println("Run `mac test` to run unittest");
     }
 
+    public static int[] pre4(int[] nums) {
+        int index = -1;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 4) {
+                index = i;
+                break;
+            }
+        }
+
+        if (index == -1) return nums;
+
+        int[] arr = new int[index];
+
+        for (int i = 0; i < index; i++)
+            arr[i] = nums[i];
+
+        return arr;
+    }
+
     public static int[] shiftLeft(int[] nums) {
         if (nums.length <= 1) return nums;
 

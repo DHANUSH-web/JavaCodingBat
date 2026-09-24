@@ -359,4 +359,11 @@ public class MainTest {
         assertArrayEquals(Main.shiftLeft(new int[]{1, 2}), new int[]{2, 1});
         assertArrayEquals(Main.shiftLeft(new int[]{1}), new int[]{1});
     }
+
+    @Test
+    void testPre4() {
+        assertArrayEquals(Main.pre4(new int[]{1, 2, 4, 1}), new int[]{1, 2});
+        assertArrayEquals(Main.pre4(new int[]{3, 1, 4}), new int[]{3, 1});
+        assertArrayEquals(Main.pre4(new int[]{1, 4, 4}), new int[]{1});
+    }
 }
